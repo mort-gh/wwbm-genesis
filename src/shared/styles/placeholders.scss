@@ -55,3 +55,31 @@
    line-height: 16px;
    margin-bottom: 8px;
 }
+
+@media (min-width: $min-1440) {
+   %opt-btn {
+      width: 421px;
+      height: 72px;
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 32px;
+   }
+}
+
+// score item
+
+%win-item {
+   height: 32px;
+   width: 240px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+@media (min-width: $min-1024) {
+   %win-item {
+      height: 40px;
+      width: 240px;
+   }
+}
