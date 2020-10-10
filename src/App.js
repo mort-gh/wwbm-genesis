@@ -1,23 +1,27 @@
 // libraries
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-
-// modules
-import Home from './modules/home/screens/Home';
-import Game from './modules/game/containers/Game.container';
-import GameOver from './modules/gameOver/containers/GameOver.container';
 
 // services
 import route from './routes/routes';
 
+// lazy loaders
+const LoadHomePage = lazy(() => import(/* webpackChunkName: "home" */ './modules/home/screens/Home'));
+const LoadGamePage = lazy(() => import(/* webpackChunkName: "game" */ './modules/game/containers/Game.container'));
+const LoadGameOverPage = lazy(() =>
+   import(/* webpackChunkName: "gameover" */ './modules/gameOver/containers/GameOver.container'),
+);
+
 function App() {
    return (
-      <Switch>
-         <Route path={route.Home} exact component={Home} />
-         <Route path={route.Game} component={Game} />
-         <Route path={route.GameOver} component={GameOver} />
-         <Redirect to={route.Home} />
-      </Switch>
+      <Suspense fallback={<div>Loading... </div>}>
+         <Switch>
+            <Route path={route.Home} exact component={LoadHomePage} />
+            <Route path={route.Game} component={LoadGamePage} />
+            <Route path={route.GameOver} component={LoadGameOverPage} />
+            <Redirect to={route.Home} />
+         </Switch>
+      </Suspense>
    );
 }
 
