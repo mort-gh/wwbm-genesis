@@ -4,7 +4,6 @@
    "private": true,
    "author": "Roman Hnatiuk <gnatyuk.info@gmail.com>",
    "license": "ISC",
-   "homepage": "https://mort-gh.github.io/wwbm-genesis",
    "dependencies": {
       "@testing-library/jest-dom": "^5.11.4",
       "@testing-library/react": "^11.0.4",
