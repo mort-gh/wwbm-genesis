@@ -13,8 +13,9 @@ html {
 }
 
 body {
-   font-family: 'Montserrat', sans-serif;
-   background: var(--color-bg);
+   min-width: 100vw;
+   min-height: 100vh;
+   font-family: $inter;
 }
 
 img {
@@ -28,4 +29,111 @@ ol {
    list-style: none;
    margin: 0;
    padding: 0;
+}
+
+// buttons
+
+.btn {
+   @extend %btn;
+   width: 288px;
+   height: 48px;
+   border-radius: 8px;
+}
+
+.btn:hover {
+   @extend %btn-hover;
+}
+.btn:active {
+   @extend %btn-pressed;
+}
+
+.btn-text {
+   @extend %btn-text;
+   font-size: 14px;
+   line-height: 16px;
+}
+
+@media (min-width: $min-1024) {
+   .btn {
+      width: 296px;
+      height: 64px;
+      border-radius: 12px;
+   }
+
+   .btn-text {
+      font-size: 20px;
+      line-height: 23px;
+   }
+}
+
+// options
+
+.inactive,
+.correct,
+.wrong {
+   @extend %opt-btn;
+}
+
+.inactive svg {
+   fill: $black-5;
+   stroke: $black-40;
+}
+
+.inactive:hover svg {
+   fill: $orange-5;
+   stroke: $orange-100;
+}
+
+.correct svg {
+   fill: $green-5;
+   stroke: $green-100;
+}
+
+.wrong svg {
+   fill: $red-5;
+   stroke: $red-100;
+}
+
+// score table
+
+.was-win {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 16px;
+   color: $black-100;
+
+   color: $black-40;
+}
+
+.is-win {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 16px;
+   color: $black-100;
+
+   color: $orange-100;
+}
+
+.will-win {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 16px;
+   color: $black-100;
+
+   color: $black-100;
 }
