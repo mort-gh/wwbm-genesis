@@ -1,0 +1,121 @@
+.selection {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+}
+
+.question {
+   &__text {
+      color: $black-100;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      margin: 0 16px;
+   }
+
+   &__options {
+      &_list {
+         display: flex;
+         flex-direction: column;
+         margin-bottom: 25px;
+      }
+
+      &_block {
+         position: relative;
+         background: none;
+         border: none;
+         outline: none;
+         margin: 0;
+         padding: 0;
+
+         width: 320px;
+         height: 56px;
+         font-size: 14px;
+         line-height: 16px;
+         margin-bottom: 8px;
+      }
+
+      &_item {
+         fill: $white-100;
+         stroke: $black-40;
+         cursor: pointer;
+      }
+
+      &_block:hover .question__options_item {
+         fill: $orange-5;
+         stroke: $orange-100;
+      }
+
+      &_text {
+         position: absolute;
+         left: 17px;
+         top: 50%;
+         transform: translateY(-50%);
+         cursor: pointer;
+      }
+
+      &_key {
+         color: $orange-100;
+         font-weight: 600;
+         text-transform: uppercase;
+         margin-left: 24px;
+         margin-right: 8px;
+      }
+
+      &_value {
+         color: $black-100;
+         font-weight: normal;
+      }
+   }
+}
+
+@media (min-width: $min-768) {
+   .selection {
+      justify-content: center;
+   }
+
+   .question {
+      &__text {
+         width: 650px;
+         text-align: left;
+         font-weight: 600;
+         font-size: 32px;
+         line-height: 37px;
+         height: auto;
+
+         margin-bottom: 395px;
+      }
+
+      &__options {
+         &_list {
+            width: 650px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+         }
+
+         &_key {
+            margin-left: 32px;
+         }
+      }
+   }
+}
+
+@media (min-width: $min-1440) {
+   .question {
+      &__options {
+         &_list {
+            width: 845px;
+         }
+      }
+   }
+}
