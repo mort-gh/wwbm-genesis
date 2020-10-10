@@ -1,26 +1,32 @@
 {
   "files": {
+    "game.js": "/wwbm-genesis/static/js/game.f5bff233.chunk.js",
+    "game.js.map": "/wwbm-genesis/static/js/game.f5bff233.chunk.js.map",
+    "gameover.js": "/wwbm-genesis/static/js/gameover.3eca0cb5.chunk.js",
+    "gameover.js.map": "/wwbm-genesis/static/js/gameover.3eca0cb5.chunk.js.map",
+    "home.js": "/wwbm-genesis/static/js/home.20b65e70.chunk.js",
+    "home.js.map": "/wwbm-genesis/static/js/home.20b65e70.chunk.js.map",
     "main.css": "/wwbm-genesis/static/css/main.9ed162b5.chunk.css",
-    "main.js": "/wwbm-genesis/static/js/main.e11d4d18.chunk.js",
-    "main.js.map": "/wwbm-genesis/static/js/main.e11d4d18.chunk.js.map",
-    "runtime-main.js": "/wwbm-genesis/static/js/runtime-main.6e28b935.js",
-    "runtime-main.js.map": "/wwbm-genesis/static/js/runtime-main.6e28b935.js.map",
-    "static/js/2.e6fbdcfa.chunk.js": "/wwbm-genesis/static/js/2.e6fbdcfa.chunk.js",
-    "static/js/2.e6fbdcfa.chunk.js.map": "/wwbm-genesis/static/js/2.e6fbdcfa.chunk.js.map",
+    "main.js": "/wwbm-genesis/static/js/main.65f1d703.chunk.js",
+    "main.js.map": "/wwbm-genesis/static/js/main.65f1d703.chunk.js.map",
+    "runtime-main.js": "/wwbm-genesis/static/js/runtime-main.77b171a7.js",
+    "runtime-main.js.map": "/wwbm-genesis/static/js/runtime-main.77b171a7.js.map",
+    "static/js/5.add749fa.chunk.js": "/wwbm-genesis/static/js/5.add749fa.chunk.js",
+    "static/js/5.add749fa.chunk.js.map": "/wwbm-genesis/static/js/5.add749fa.chunk.js.map",
     "index.html": "/wwbm-genesis/index.html",
-    "precache-manifest.967357259125010a6a50a936b1ba90c3.js": "/wwbm-genesis/precache-manifest.967357259125010a6a50a936b1ba90c3.js",
+    "precache-manifest.0caf84f438331c4fea05a3334db95447.js": "/wwbm-genesis/precache-manifest.0caf84f438331c4fea05a3334db95447.js",
     "service-worker.js": "/wwbm-genesis/service-worker.js",
     "static/css/main.9ed162b5.chunk.css.map": "/wwbm-genesis/static/css/main.9ed162b5.chunk.css.map",
-    "static/js/2.e6fbdcfa.chunk.js.LICENSE.txt": "/wwbm-genesis/static/js/2.e6fbdcfa.chunk.js.LICENSE.txt",
+    "static/js/5.add749fa.chunk.js.LICENSE.txt": "/wwbm-genesis/static/js/5.add749fa.chunk.js.LICENSE.txt",
     "static/media/like.svg": "/wwbm-genesis/static/media/like.37d0a94c.svg",
     "static/media/option.531c1c21.svg": "/wwbm-genesis/static/media/option.531c1c21.svg",
     "static/media/main.scss": "/wwbm-genesis/static/media/orientation.2b336fcc.png",
     "static/media/score.300981bd.svg": "/wwbm-genesis/static/media/score.300981bd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6e28b935.js",
-    "static/js/2.e6fbdcfa.chunk.js",
+    "static/js/runtime-main.77b171a7.js",
+    "static/js/5.add749fa.chunk.js",
     "static/css/main.9ed162b5.chunk.css",
-    "static/js/main.e11d4d18.chunk.js"
+    "static/js/main.65f1d703.chunk.js"
   ]
 }
