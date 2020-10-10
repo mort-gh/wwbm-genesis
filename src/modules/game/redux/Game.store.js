@@ -6,4 +6,5 @@ export default {
    questionNumber: 1,
    score: 0,
    totalQuestions: questions.length,
+   disable: false,
 };
