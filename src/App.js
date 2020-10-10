@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 // services
 import route from './routes/routes';
+import Spinner from './modules/spinner/screens/Spinner';
 
 // lazy loaders
 const LoadHomePage = lazy(() => import(/* webpackChunkName: "home" */ './modules/home/screens/Home'));
@@ -14,7 +15,7 @@ const LoadGameOverPage = lazy(() =>
 
 function App() {
    return (
-      <Suspense fallback={<div>Loading... </div>}>
+      <Suspense fallback={<Spinner />}>
          <Switch>
             <Route path={route.Home} exact component={LoadHomePage} />
             <Route path={route.Game} component={LoadGamePage} />
