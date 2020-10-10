@@ -5,45 +5,62 @@ import React from 'react';
 import route from '../../../routes/routes';
 import SelectonPropTypes from '../types/Selection.types';
 
+// images
+import { ReactComponent as OptionSvg } from '../../../static/svgs/option.svg';
+
 const Selecton = (props) => {
    const { question, questionNumber, totalQuestions, saveScore, nextQuestionHandler } = props;
 
-   const buttonHandler = (event) => {
-      const { history } = props;
-      const { correctOptions } = question;
-      const selectedOption = event.target.name;
-      const isOptionCorrect = correctOptions.includes(selectedOption);
+   const buttonHandler = async (event) => {
+      const { history } = props; // access to history
+      const { name } = event.currentTarget; // name of the button pressed (selected answer option)
+      const { correctOptions, win } = question; // correct answer, win
+      const isOptionCorrect = correctOptions.includes(name); // check if the selected answer is among the correct ones
+      const node = document.querySelector(`[name="${name}"]`); // access to the button node to change the class name
+      const timeout = 1000; // timeout between choosing an answer and loading the next question
 
+      // (1) - check if the option is correct:
       if (isOptionCorrect) {
-         const { win } = question;
+         node.className = 'correct';
 
-         if (questionNumber < totalQuestions) {
-            nextQuestionHandler(questionNumber, win);
-         } else {
-            saveScore(win);
-            history.push(route.GameOver);
-         }
+         setTimeout(() => {
+            // (2) - check if this is not the last question:
+            if (questionNumber < totalQuestions) {
+               nextQuestionHandler(questionNumber, win);
+            } else {
+               saveScore(win);
+               history.push(route.GameOver);
+            }
+
+            node.className = 'inactive';
+         }, timeout);
       } else {
-         history.push(route.GameOver);
+         node.className = 'wrong';
+
+         setTimeout(() => {
+            node.className = 'inactive';
+            history.push(route.GameOver);
+         }, timeout);
       }
    };
 
    const htmlSelectorBlock = (option) => {
-      const key = Object.keys(option)[0];
-      const value = Object.values(option)[0];
+      const key = Object.keys(option)[0]; // get the answer option
+      const value = Object.values(option)[0]; // get the text of the answer option
 
+      // return button's html:
       return (
-         <button onClick={buttonHandler} key={key} type="button" name={key}>
-            {value}
+         <button className="inactive" type="button" onClick={buttonHandler} key={key} name={key}>
+            <OptionSvg />
+            <p className="question__options_text">
+               <span className="question__options_key">{key}</span>
+               <span className="question__options_value">{value}</span>
+            </p>
          </button>
       );
    };
 
-   return (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-         {question.options.map((option) => htmlSelectorBlock(option))}
-      </div>
-   );
+   return <div className="question__options_list">{question.options.map((option) => htmlSelectorBlock(option))}</div>;
 };
 
 export default Selecton;

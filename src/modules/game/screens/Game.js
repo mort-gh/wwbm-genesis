@@ -11,9 +11,7 @@ import Selection from '../containers/Selection.container';
 const Game = ({ question }) => {
    return (
       <div className="game">
-         <h1>Game</h1>
-
-         <h2>{question.text}</h2>
+         <p className="question__text">{question.text}</p>
 
          <Selection />
          <Score />
