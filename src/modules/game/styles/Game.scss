@@ -1,0 +1,135 @@
+.game {
+   background: $black-5;
+   min-width: 100vw;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.question {
+   &__text {
+      color: $black-100;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      margin: 0 16px;
+   }
+
+   &__options {
+      &_list {
+         display: flex;
+         flex-direction: column;
+         margin-bottom: 25px;
+         margin-top: 100px;
+      }
+
+      &_block {
+         position: relative;
+         background: none;
+         border: none;
+         outline: none;
+         margin: 0;
+         padding: 0;
+
+         width: 320px;
+         height: 56px;
+         font-size: 14px;
+         line-height: 16px;
+         margin-bottom: 8px;
+      }
+
+      &_item {
+         fill: $white-100;
+         stroke: $black-40;
+         cursor: pointer;
+      }
+
+      &_block:hover .question__options_item {
+         fill: $orange-5;
+         stroke: $orange-100;
+      }
+
+      &_text {
+         position: absolute;
+         left: 17px;
+         top: 50%;
+         transform: translateY(-50%);
+         cursor: pointer;
+      }
+
+      &_key {
+         color: $orange-100;
+         font-weight: 600;
+         text-transform: uppercase;
+         margin-left: 24px;
+         margin-right: 8px;
+      }
+
+      &_value {
+         color: $black-100;
+         font-weight: normal;
+      }
+   }
+}
+
+.score {
+   width: 100%;
+
+   &__list {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 100%;
+
+      margin-bottom: 32px;
+
+      &_item {
+         position: relative;
+         width: 100%;
+         height: 32px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      &_item::before {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         content: '';
+         width: 100%;
+         height: 1px;
+         background: $black-40;
+      }
+
+      &_item:not(:last-child) {
+         margin-top: 8px;
+      }
+
+      &_block {
+      }
+
+      &_svg {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      &_text {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+
+         font-weight: normal;
+         font-size: 14px;
+         line-height: 16px;
+         color: $black-100;
+      }
+   }
+}
