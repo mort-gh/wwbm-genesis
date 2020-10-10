@@ -1,5 +1,11 @@
 import initialState from './Game.store';
-import { SAVE_SCORE, GET_NEXT_QUESTION_DATA, SAVE_QUESTION_NUMBER, RESTART_GAME } from '../../../redux_setup/types';
+import {
+   SAVE_SCORE,
+   GET_NEXT_QUESTION_DATA,
+   SAVE_QUESTION_NUMBER,
+   RESTART_GAME,
+   DISABLE_BUTTONS,
+} from '../../../redux_setup/types';
 
 const handlers = {
    [SAVE_SCORE]: (state, { payload }) => {
@@ -12,6 +18,10 @@ const handlers = {
 
    [GET_NEXT_QUESTION_DATA]: (state, { payload }) => {
       return { ...state, question: payload };
+   },
+
+   [DISABLE_BUTTONS]: (state, { payload }) => {
+      return { ...state, disable: payload };
    },
 
    [RESTART_GAME]: (state) => {

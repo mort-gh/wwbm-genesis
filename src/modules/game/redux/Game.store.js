@@ -7,5 +7,4 @@ export default {
    score: 0,
    totalQuestions: questions.length,
    disable: false,
-   loading: false,
 };

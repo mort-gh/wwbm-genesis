@@ -1,0 +1,16 @@
+.game {
+   background: $black-5;
+   min-width: 100vw;
+   min-height: 100vh;
+   position: relative;
+}
+
+@media (min-width: $min-1024) {
+   .game {
+      display: flex;
+   }
+}
+
+// Selection styles
+// Score styles
+// burger-menu styles

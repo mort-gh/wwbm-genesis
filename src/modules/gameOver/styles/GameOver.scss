@@ -1,0 +1,64 @@
+.gameover {
+   @extend %wrap;
+   background: $black-5;
+
+   &__img {
+      width: 288px;
+      height: 192px;
+      margin-bottom: 42px;
+   }
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__title {
+      color: $black-100;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 37px;
+      text-align: center;
+      margin-bottom: 102px;
+   }
+
+   &__subtitle {
+      display: block;
+      opacity: 0.5;
+      font-size: 18px;
+      line-height: 21px;
+   }
+
+   &__btn {
+      &_link {
+         text-decoration: none;
+      }
+   }
+}
+
+@media (min-width: $min-1024) {
+   .gameover {
+      flex-direction: row;
+
+      &__img {
+         width: 624px;
+         height: 367px;
+         margin-bottom: 0;
+         margin-right: 32px;
+      }
+
+      &__block {
+         align-items: start;
+      }
+
+      &__title {
+         text-align: left;
+         font-size: 56px;
+         line-height: 65px;
+         margin-bottom: 64px;
+      }
+   }
+}

@@ -1,4 +1,10 @@
-import { GET_NEXT_QUESTION_DATA, SAVE_SCORE, SAVE_QUESTION_NUMBER, RESTART_GAME } from '../../../redux_setup/types';
+import {
+   GET_NEXT_QUESTION_DATA,
+   SAVE_SCORE,
+   SAVE_QUESTION_NUMBER,
+   RESTART_GAME,
+   DISABLE_BUTTONS,
+} from '../../../redux_setup/types';
 import questions from '../../../db/questions.json';
 
 export function saveQuestionNumber(number) {
@@ -35,5 +41,12 @@ export function nextQuestionHandler(number, score) {
 export function restartGame() {
    return {
       type: RESTART_GAME,
+   };
+}
+
+export function disableButtons(bool) {
+   return {
+      type: DISABLE_BUTTONS,
+      payload: bool,
    };
 }

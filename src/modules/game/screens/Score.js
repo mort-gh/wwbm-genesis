@@ -5,26 +5,55 @@ import React from 'react';
 import { formatMoney } from '../../../shared/utils';
 import ScorePropTypes from '../types/Score.types';
 
+// images
+import { ReactComponent as ScoreSvg } from '../../../static/svgs/score.svg';
+
 const Score = ({ questions, score }) => {
-   const getItemColor = (itemScore) => {
-      let color;
-      if (itemScore === score) {
-         color = 'red';
-      } else if (itemScore < score) {
-         color = 'grey';
-      } else {
-         color = 'black';
-      }
-      return color;
+   const colors = {
+      // used colors in the module:
+      orange100: '#ff8b37',
+      black40: '#d0d0d8',
+      black100: '#1c1c21',
+   };
+
+   // dynamic text color change:
+   const textColor = (win) => {
+      if (win === score) return colors.orange100;
+      if (win < score) return colors.black40;
+      return colors.black100;
+   };
+
+   // dynamic stroke color change:
+   const strokeColor = (win) => {
+      if (win === score) return colors.orange100;
+      return colors.black40;
+   };
+
+   const className = (win) => {
+      if (win === score) return 'score__list_item item_win';
+      return 'score__list_item';
+   };
+
+   // html winning table element markup:
+   const htmlCurrentWin = (value) => {
+      const valueToCurrecy = `$${formatMoney(+value)}`;
+
+      return (
+         <li className={className(+value)} key={value}>
+            <div className="score__list_block table">
+               <ScoreSvg stroke={strokeColor(+value)} />
+
+               <span className="score__list_text" style={{ color: textColor(+value) }}>
+                  {valueToCurrecy}
+               </span>
+            </div>
+         </li>
+      );
    };
 
    return (
       <div className="score">
-         <ul style={{ display: 'flex', flexDirection: 'column-reverse' }}>
-            {questions.map(({ win }) => {
-               return <li style={{ color: getItemColor(+win) }} key={win}>{`$${formatMoney(+win)}`}</li>;
-            })}
-         </ul>
+         <ul className="score__list">{questions.map(({ win }) => htmlCurrentWin(win))}</ul>
       </div>
    );
 };
