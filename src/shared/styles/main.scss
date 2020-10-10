@@ -1,4 +1,11 @@
+// system
 @import './normalize.scss';
 @import './fonts.scss';
 @import './variables.scss';
+@import './placeholders.scss';
 @import './base.scss';
+
+// modules
+@import '../../modules/home/styles/Home.scss';
+@import '../../modules/game/styles/Game.scss';
+@import '../../modules/gameOver/styles/GameOver.scss';
