@@ -27,6 +27,13 @@
    font-weight: 600;
 }
 
+// for smartphones with small screens and landscape orientation
+@media (max-width: $min-768) and (orientation: landscape) {
+   %btn {
+      margin-bottom: 40px;
+   }
+}
+
 // main page wrapper
 
 %wrap {
@@ -65,6 +72,13 @@
       font-size: 20px;
       line-height: 23px;
       margin-bottom: 32px;
+   }
+}
+
+// for smartphones with small screens and landscape orientation
+@media (max-width: $min-768) and (orientation: landscape) {
+   %opt-btn {
+      margin-bottom: 3px;
    }
 }
 
