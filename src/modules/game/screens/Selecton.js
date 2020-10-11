@@ -7,6 +7,7 @@ import SelectonPropTypes from '../types/Selection.types';
 
 // images
 import { ReactComponent as OptionSvg } from '../../../static/svgs/option.svg';
+import { ReactComponent as OptionSvgMini } from '../../../static/svgs/option-min.svg';
 
 const Selecton = (props) => {
    // export all props used in the component:
@@ -62,6 +63,7 @@ const Selecton = (props) => {
       const key = Object.keys(option)[0]; // get the answer option
       const value = Object.values(option)[0]; // get the text of the answer option
       const disableStatus = disable ? 'disable' : '';
+      const mediaQuery = window.matchMedia('(min-width: 1440px)');
 
       // return button's html:
       return (
@@ -73,7 +75,7 @@ const Selecton = (props) => {
             key={key}
             name={key}
          >
-            <OptionSvg />
+            {mediaQuery.matches ? <OptionSvg /> : <OptionSvgMini />}
             <p className="question__options_text">
                <span className="question__options_key">{key}</span>
                <span className="question__options_value">{value}</span>
