@@ -41,6 +41,7 @@ I made up the questions myself. I hope you find them interesting. Please don't j
 - *add the "**Phone-a-Friend**" option (connect Skype / WhatsApp)*
 - *add the "**Ask the Audience**" option (the algorithm of the probable correct answer)*
 - *add option "**50:50**" (remove two wrong answers)*
+- *add **Home** button on other pages*
 
 ## Installation 🛠
 
