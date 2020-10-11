@@ -7,6 +7,7 @@ import ScorePropTypes from '../types/Score.types';
 
 // images
 import { ReactComponent as ScoreSvg } from '../../../static/svgs/score.svg';
+import { ReactComponent as ScoreSvgMin } from '../../../static/svgs/score-min.svg';
 
 const Score = ({ questions, score }) => {
    const colors = {
@@ -37,11 +38,19 @@ const Score = ({ questions, score }) => {
    // html winning table element markup:
    const htmlCurrentWin = (value) => {
       const valueToCurrecy = `$${formatMoney(+value)}`;
+      const mediaQuery = window.matchMedia('(min-width: 1440px)');
+
+      const isMediaQuery = mediaQuery.matches ? (
+         <ScoreSvg stroke={strokeColor(+value)} />
+      ) : (
+         <ScoreSvgMin stroke={strokeColor(+value)} />
+      );
 
       return (
          <li className={className(+value)} key={value}>
             <div className="score__list_block table">
-               <ScoreSvg stroke={strokeColor(+value)} />
+               {/* <ScoreSvg stroke={strokeColor(+value)} /> */}
+               {isMediaQuery}
 
                <span className="score__list_text" style={{ color: textColor(+value) }}>
                   {valueToCurrecy}
