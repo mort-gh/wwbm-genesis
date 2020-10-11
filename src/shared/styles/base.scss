@@ -75,6 +75,13 @@ ol {
    @extend %opt-btn;
 }
 
+.inactive svg,
+.correct svg,
+.wrong svg {
+   width: 320px;
+   height: 56px;
+}
+
 .inactive svg {
    fill: $white-100;
    stroke: $black-40;
@@ -93,6 +100,15 @@ ol {
 .wrong svg {
    fill: $red-5;
    stroke: $red-100;
+}
+
+@media (min-width: $min-1440) {
+   .inactive svg,
+   .correct svg,
+   .wrong svg {
+      width: 421px;
+      height: 72px;
+   }
 }
 
 // score table
