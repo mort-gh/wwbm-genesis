@@ -44,6 +44,7 @@ ol {
 .btn:hover {
    @extend %btn-hover;
 }
+
 .btn:active {
    @extend %btn-pressed;
 }
@@ -87,11 +88,6 @@ ol {
    stroke: $black-40;
 }
 
-.inactive:hover svg {
-   fill: $orange-5;
-   stroke: $orange-100;
-}
-
 .correct svg {
    fill: $green-5;
    stroke: $green-100;
@@ -102,11 +98,18 @@ ol {
    stroke: $red-100;
 }
 
+@media (min-width: $min-1024) {
+   .inactive:hover svg {
+      fill: $orange-5;
+      stroke: $orange-100;
+   }
+}
+
 @media (min-width: $min-1440) {
    .inactive svg,
    .correct svg,
    .wrong svg {
-      width: 421px;
+      width: 405px;
       height: 72px;
    }
 }
