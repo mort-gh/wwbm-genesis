@@ -65,19 +65,14 @@
 
 @media (min-width: $min-768) {
    .selection {
-      justify-content: center;
+      justify-content: space-around;
    }
 
    .question {
       &__text {
          width: 650px;
-         text-align: left;
-         font-weight: 600;
-         font-size: 32px;
-         line-height: 37px;
          height: auto;
-
-         margin-bottom: 395px;
+         text-align: left;
       }
 
       &__options {
@@ -98,9 +93,35 @@
 
 @media (min-width: $min-1440) {
    .question {
+      &__text {
+         font-size: 32px;
+         line-height: 37px;
+      }
+
       &__options {
          &_list {
             width: 845px;
+         }
+      }
+   }
+}
+
+// for smartphones with small screens and landscape orientation
+@media (max-width: $min-768) and (orientation: landscape) {
+   .question {
+      &__text {
+         font-size: 16px;
+         line-height: 20px;
+         margin: 0 40px;
+      }
+
+      &__options {
+         &_list {
+            margin-bottom: 3px;
+         }
+
+         &_item {
+            margin-bottom: 3px;
          }
       }
    }
