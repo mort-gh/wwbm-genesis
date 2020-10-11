@@ -2,6 +2,8 @@
 
 **(WWBM) Who want to be a millionaire** - this app is a quiz game based on the famous game "Who Wants to Be a Millionaire?" The player is given 12 questions and 4 answers to each of them. To win the game, you need to answer all the questions correctly.
 
+➡️ I made up the questions myself. I hope you find them interesting. Please don't judge me harshly :)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/909b5a7a-a98a-4770-a58c-71e72e38cf64/deploy-status)](https://app.netlify.com/sites/affectionate-sammet-b40bc3/deploys)
 
 > [Live demo](https://affectionate-sammet-b40bc3.netlify.app/) - Netlify 
