@@ -66,11 +66,18 @@ const Selecton = (props) => {
       return <OptionSvgMini />; // svg for little width screens
    };
 
+   const getIdxOptionKey = (idx) => {
+      const options = ['a', 'b', 'c', 'd'];
+      return options[idx];
+   };
+
    // returns html markup for each answer option button:
-   const htmlSelectorBlock = (option) => {
+   const htmlSelectorBlock = (option, idx) => {
       const key = Object.keys(option)[0]; // get the answer option
       const value = Object.values(option)[0]; // get the text of the answer option
       const disableStatus = disable ? 'disable' : '';
+
+      const idxKey = getIdxOptionKey(idx);
 
       // return button's html:
       return (
@@ -84,7 +91,7 @@ const Selecton = (props) => {
          >
             {renderSvgAsComponent()}
             <p className="question__options_text">
-               <span className="question__options_key">{key}</span>
+               <span className="question__options_key">{idxKey}</span>
                <span className="question__options_value">{value}</span>
             </p>
          </button>
@@ -95,7 +102,9 @@ const Selecton = (props) => {
       <div className="selection">
          <p className="question__text">{question.text}</p>
 
-         <div className="question__options_list">{question.options.map((option) => htmlSelectorBlock(option))}</div>
+         <div className="question__options_list">
+            {question.options.map((option, idx) => htmlSelectorBlock(option, idx))}
+         </div>
       </div>
    );
 };

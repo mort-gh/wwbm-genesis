@@ -6,6 +6,7 @@ import {
    RESTART_GAME,
    DISABLE_BUTTONS,
 } from '../../../redux_setup/types';
+import { toShuffle } from '../../../shared/utils';
 
 const handlers = {
    [SAVE_SCORE]: (state, { payload }) => {
@@ -17,7 +18,10 @@ const handlers = {
    },
 
    [GET_NEXT_QUESTION_DATA]: (state, { payload }) => {
-      return { ...state, question: payload };
+      const question = payload;
+      const shuffledOptions = toShuffle(question.options);
+      question.options = shuffledOptions;
+      return { ...state, question };
    },
 
    [DISABLE_BUTTONS]: (state, { payload }) => {
