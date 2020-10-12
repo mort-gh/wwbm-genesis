@@ -58,12 +58,19 @@ const Selecton = (props) => {
       }
    };
 
+   // select size of the SVG image depending on the screen size:
+   const renderSvgAsComponent = () => {
+      const mediaQuery = window.matchMedia('(min-width: 1440px)');
+
+      if (mediaQuery.matches) return <OptionSvg />; // svg for big width screens
+      return <OptionSvgMini />; // svg for little width screens
+   };
+
    // returns html markup for each answer option button:
    const htmlSelectorBlock = (option) => {
       const key = Object.keys(option)[0]; // get the answer option
       const value = Object.values(option)[0]; // get the text of the answer option
       const disableStatus = disable ? 'disable' : '';
-      const mediaQuery = window.matchMedia('(min-width: 1440px)');
 
       // return button's html:
       return (
@@ -75,7 +82,7 @@ const Selecton = (props) => {
             key={key}
             name={key}
          >
-            {mediaQuery.matches ? <OptionSvg /> : <OptionSvgMini />}
+            {renderSvgAsComponent()}
             <p className="question__options_text">
                <span className="question__options_key">{key}</span>
                <span className="question__options_value">{value}</span>
