@@ -8,7 +8,7 @@ I made up the questions myself. I hope you find them interesting. Please don't j
 
 > [Live demo](https://affectionate-sammet-b40bc3.netlify.app/) - Netlify 
 > 
-> ***automatic deployment, unlike GithubPages*
+> **automatic deployment, unlike GithubPages*
 
 ## Technologies and specifications 🧬
 
