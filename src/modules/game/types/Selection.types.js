@@ -8,6 +8,7 @@ export default {
    totalQuestions: PropTypes.number.isRequired,
    disable: PropTypes.bool.isRequired,
    saveScore: PropTypes.func.isRequired,
+   getNextQuestionData: PropTypes.func.isRequired,
    nextQuestionHandler: PropTypes.func.isRequired,
    history: PropTypes.shape({
       push: PropTypes.func.isRequired,
