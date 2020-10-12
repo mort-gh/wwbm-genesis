@@ -33,17 +33,18 @@ I made up the questions myself. I hope you find them interesting. Please don't j
 
 ## TODO 👇
 
-- *ready to typing with **TypeScript** - need to implement TS*   `// or Flow`
-- *ready to testing with **Jest** and **Enzyme** - need to implement tests and snapshots*
-- *add a **panel** module to manage questions and answer options in the application* - [( pull-request )](https://github.com/mort-gh/wwbm-genesis/pull/5) 
-- *add the "**Phone-a-Friend**" option (connect Skype / WhatsApp)*
-- *add the "**Ask the Audience**" option (the algorithm of the probable correct answer)*
-- *add option "**50:50**" (remove two wrong answers)*
-- *add **Home** button on other pages*
+- rewrite the connections (mstp, mdtp) to redux using hooks
+- typing using **TypeScript** or **Flow**
+- testing code and component snapshots with **Jest** and **Enzyme**
+- create a **Control Panel** to manage questions and answer options into the application - [( pull-request )](https://github.com/mort-gh/wwbm-genesis/pull/5) 
+- add the "**Phone-a-Friend**" option (connect Skype / WhatsApp)
+- add the "**Ask the Audience**" option (the algorithm of the probable correct answer)
+- add option "**50:50**" (remove two wrong answers)
+- add **Home** button from other app pages
 
 ## Installation 🛠
 
-This application has been tested on Node.js version 12 and later. There is way to install them:
+This application has been tested on **Node.js** version 12 or later, and using **Yarn** as package manager. There is way to install them:
 
 1. Clone the repository to a local or remote server:
 
@@ -67,4 +68,8 @@ To install, type:
 
 	`http://localhost:3000/`
 
-3. Don't forget to star the repository :)
+3. Don't forget **to star** ⭐ the repository in the top corner of the page :)
+
+## PS:
+
+I will always be glad to receive your comments and suggestions - send pull requests or write to me via social networks (link in bio).
