@@ -7,7 +7,8 @@ I made up the questions myself. I hope you find them interesting. Please don't j
 [![Netlify Status](https://api.netlify.com/api/v1/badges/909b5a7a-a98a-4770-a58c-71e72e38cf64/deploy-status)](https://app.netlify.com/sites/affectionate-sammet-b40bc3/deploys)
 
 > [Live demo](https://affectionate-sammet-b40bc3.netlify.app/) - Netlify 
-> **automatic deployment, unlike GithubPages*
+> 
+> ***automatic deployment, unlike GithubPages*
 
 ## Technologies and specifications 🧬
 
