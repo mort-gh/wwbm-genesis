@@ -35,22 +35,23 @@ const Score = ({ questions, score }) => {
       return 'score__list_item';
    };
 
+   // select size of the SVG image depending on the screen size:
+   const renderSvgAsComponent = (value) => {
+      const mediaQuery = window.matchMedia('(min-width: 1440px)');
+      const stroke = strokeColor(+value); // get current stroke color for each items
+
+      if (mediaQuery.matches) return <ScoreSvg stroke={stroke} />; // svg for big width screens
+      return <ScoreSvgMin stroke={stroke} />; // svg for little width screens
+   };
+
    // html winning table element markup:
    const htmlCurrentWin = (value) => {
       const valueToCurrecy = `$${formatMoney(+value)}`;
-      const mediaQuery = window.matchMedia('(min-width: 1440px)');
-
-      const isMediaQuery = mediaQuery.matches ? (
-         <ScoreSvg stroke={strokeColor(+value)} />
-      ) : (
-         <ScoreSvgMin stroke={strokeColor(+value)} />
-      );
 
       return (
          <li className={className(+value)} key={value}>
             <div className="score__list_block table">
-               {/* <ScoreSvg stroke={strokeColor(+value)} /> */}
-               {isMediaQuery}
+               {renderSvgAsComponent(+value)}
 
                <span className="score__list_text" style={{ color: textColor(+value) }}>
                   {valueToCurrecy}
