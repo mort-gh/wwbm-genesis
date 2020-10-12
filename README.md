@@ -25,20 +25,17 @@ I made up the questions myself. I hope you find them interesting. Please don't j
 
 ## Application features 🚀
 
-- changing the number of questions
-- changing the number of answer options
-- several correct answers
-- blocking option buttons after selecting until the next question is loaded
-- changing the app store using redux
-- scaling the application due to a well-thought-out project architecture
-- adding, changing, deleting questions / answers through the control panel (**IN DEVELOPMENT!**)
+- random order of answer options each time a question is loaded ✅
+- blocking option buttons after selecting until the next question is loaded ✅
+- the ability to add several correct answers
+- the ability to change the order of questions
+- the ability to change the order of answer options
 
 ## TODO 👇
 
 - *ready to typing with **TypeScript** - need to implement TS*   `// or Flow`
 - *ready to testing with **Jest** and **Enzyme** - need to implement tests and snapshots*
 - *add a **panel** module to manage questions and answer options in the application* - [( pull-request )](https://github.com/mort-gh/wwbm-genesis/pull/5) 
-- *add a **random order of answer options** each time a question is loaded* - [( pull-request )](https://github.com/mort-gh/wwbm-genesis/pull/20)
 - *add the "**Phone-a-Friend**" option (connect Skype / WhatsApp)*
 - *add the "**Ask the Audience**" option (the algorithm of the probable correct answer)*
 - *add option "**50:50**" (remove two wrong answers)*
