@@ -1,7 +1,6 @@
 .selection {
    display: flex;
    flex-direction: column;
-   // justify-content: flex-end;
    justify-content: space-between;
    align-items: center;
    width: 100vw;
@@ -31,8 +30,6 @@
          align-items: center;
          justify-content: center;
          margin-bottom: 25px;
-         // 4 buttons with height = 56px and margin-bottom = 8px
-         height: calc(56px * 4 + 8px * 4);
       }
 
       &_item {
@@ -71,7 +68,7 @@
 
 @media (min-width: $min-768) {
    .selection {
-      justify-content: space-around;
+      justify-content: space-between;
    }
 
    .question {
@@ -79,6 +76,8 @@
          width: 650px;
          height: auto;
          text-align: left;
+
+         margin-top: 13%;
       }
 
       &__options {
@@ -89,7 +88,8 @@
             justify-content: center;
             align-items: center;
             margin-top: 0;
-            height: auto;
+
+            margin-bottom: 12%;
          }
 
          &_key {
@@ -118,19 +118,49 @@
 @media (max-width: $min-768) and (orientation: landscape) {
    .question {
       &__text {
-         font-size: 16px;
-         line-height: 20px;
-         margin: 0 40px;
+         font-size: 13px;
+         line-height: 17px;
+         margin: 0 50px;
+         margin-top: 10px;
       }
 
       &__options {
          &_list {
             margin-bottom: 3px;
-            height: calc(56px * 4 + 3px * 4);
          }
 
          &_item {
             margin-bottom: 3px;
+         }
+      }
+   }
+}
+
+// for smartphones with big screens and landscape orientation
+@media (min-width: $min-768) and (max-width: $min-1024) and (orientation: landscape) {
+   .question {
+      &__text {
+         margin-top: 70px;
+      }
+
+      &__options {
+         &_list {
+            margin-bottom: 30px;
+         }
+      }
+   }
+}
+
+// for tablets and portrait orientation
+@media (min-width: $min-768) and (orientation: portrait) {
+   .question {
+      &__text {
+         margin-top: 25%;
+      }
+
+      &__options {
+         &_list {
+            margin-bottom: 20%;
          }
       }
    }
